@@ -1,0 +1,90 @@
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#0f4675, #0f4675 300px,#fff 50%,#fff 100%);
+    width: 100%;
+}
+
+.containerProducts{
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    text-align: center;
+
+}
+.containerProducts .box{
+    box-sizing: border-box;
+    max-width: 300px;
+    position: relative;
+    margin: 5%;
+    background: #fff;
+    padding: 20px 20px 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .1);
+}
+.containerProducts .box:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #4ca3af;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+
+.containerProducts .box:hover:before{
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+}
+
+.containerProducts .box h2{
+    position: absolute;
+    right: 40px;
+    font-size: 50px;
+    color: cadetblue;
+    opacity: 0.2;
+    transition: 0.5s;
+    top: 50px;
+
+}
+.containerProducts .box:hover h2{
+    opacity: 1;
+    color: #fff;
+    transform: translateY(-40px);
+
+}
+.containerProducts .box h3{
+    width: 180px;
+    position: relative;
+    font-size: 23px;
+    top: 50px;
+    color: #333;
+    transition: 0.5s;
+
+}
+.containerProducts .box:hover h3{
+    color: white;
+}
+
+.containerProducts .box p{
+    position: relative;
+    color:white;
+    display: none;
+}
+.containerProducts .box:hover p{
+    display: block;
+}
+
+.containerProducts .box img{
+    width: 60px;
+    margin-top: 90px;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    display: center;
+}

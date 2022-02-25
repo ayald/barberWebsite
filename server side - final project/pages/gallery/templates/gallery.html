@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'gallery' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('gallery.static', filename='css/gallery.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('gallery.static', filename='css/lightbox.min.css') }}"/>
+{% endblock %}
+{% block page_head_js %}
+      <script src="{{ url_for('gallery.static', filename='js/lightbox-plus-jquery.min.js') }}"></script>
+{% endblock %}
+
+{% set page_title = 'גלריה' %}
+
+{% block page_body_main %}
+    <div class="gallerycontainer">
+        {% if GalleryImages %}
+            <div class="gallery">
+            {% for image in GalleryImages %}
+                <a href="{{ url_for('gallery.static', filename=image.imageBig) }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename=image.imageSmall) }}"></a>
+            {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

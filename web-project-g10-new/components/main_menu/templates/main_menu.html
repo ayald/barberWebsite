@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('main_menu.static', filename='css/main-menu.css') }}"/>
+
+ <div class = "Logo">
+     <img id="logo_img" src="static/media/img/logo.png" alt=" logo">
+ </div>
+    <nav>
+        <ul class="main-nav">
+            <li><a href="{{ url_for('homepage.index') }}">ראשי</a></li>
+            <li><a href="{{ url_for('about.index') }}">אודות</a></li>
+            <li><a href="{{ url_for('gallery.index') }}">גלריות</a></li>
+            <li><a href="{{ url_for('openstudio.index') }}">השתלמויות</a></li>
+            <li><a href="{{ url_for('products.index') }}">מוצרי טיפוח</a></li>
+            <li><a href="{{ url_for('Application.index') }}">קביעת תורים</a></li>
+            <li><a href="{{ url_for('contact.index') }}">צור קשר</a></li>
+            <li><a href="https://www.instagram.com/yarin_sason/" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
+            <li><a href="https://www.facebook.com/Yarin-Sason-Hair-Styling-%D7%99%D7%A8%D7%99%D7%9F-%D7%A9%D7%A9%D7%95%D7%9F-%D7%9E%D7%A2%D7%A6%D7%91-%D7%A9%D7%99%D7%A2%D7%A8-%D7%9B%D7%9C%D7%95%D7%AA-%D7%95%D7%A2%D7%A8%D7%91-348156335275975" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href="tel:054-6396904"><i class="fas fa-phone-square-alt"></i></a></li>
+            <li><a href="{{ url_for('login.index') }}"><i class="fas fa-user-alt"></i><p>כניסה/הרשמה</p></a></li>
+        </ul>
+    </nav>

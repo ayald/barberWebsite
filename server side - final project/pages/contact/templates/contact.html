@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'contact' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('contact.static', filename='css/contact.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('openstudio.static', filename='css/openstudio.css') }}"/>
+{% endblock %}
+
+{% set page_title = 'צור קשר' %}
+
+{% block page_body_main %}
+     <div class="contact">
+         {% if success %}
+            <script>
+                alert('{{ success }}')
+            </script>
+         {% endif %}
+         <div class="contactform">
+            <h4> ליצירת קשר עם המספרה יש להשאיר פרטים ונחזור אליכם בהקדם!</h4>
+            <form id="register" action="/send_message" method="POST">
+                    <input class="op_reg" type="text" id="fname" name="firstname" placeholder="שם פרטי" required>
+                    <input class="op_reg" type="text" id="lname" name="lastname" placeholder="שם משפחה">
+                    <input class="op_reg" type="tel" id="tel" name="phonenumber" placeholder="טלפון" required
+                        pattern="05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" oninvalid="alert('אנא הזן מספר נייד תקין ****05');">
+                    <input class="op_reg" type="email" id="email" name="email" placeholder="כתובת מייל" required="required"
+                           pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$"
+                           oninvalid="alert('כתובת אימייל לא תקינה');">
+                <div class="text-area">
+                    <textarea rows="4" type="text" placeholder="הודעה" name="msg"></textarea>
+                </div>
+                <input id="reg" type="submit" value="שליחה">
+            </form>
+         </div>
+            <div class="contact_ways">
+                <h4>דרכי התקשרות:</h4>
+                <div class="contact_list">
+                    <ul>
+
+                        <li class="icon1">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <p class="data">054-639-6904</p>
+                        </li>
+
+                        <li class="icon2">
+                            <i class="fas fa-envelope"></i></i>
+                        <p class="data">yarinsasson@gmail.com</p>
+                        </li>
+
+                        <li class="icon3">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <p class="data">סמילנסקי 48, באר שבע</p>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d852.8394755116988!2d34.786260170824555!3d31.238514145507494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDE0JzE4LjciTiAzNMKwNDcnMDguNiJF!5e0!3m2!1siw!2sil!4v1608850642845!5m2!1siw!2sil" width="600" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+         </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,66 @@
+.main-menu ul {
+    padding: 0;
+}
+
+.main-menu > ul > li {
+    display: inline-block;
+}
+
+.Logo{
+    width: 25%;
+    float: right;
+    padding-right: 2%;
+    margin: auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#logo_img {
+    width: 60%;
+}
+
+.Header {
+    margin: 2%;
+}
+nav {
+    align-self: center;
+}
+ul.main-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0);
+    height: 93px;
+}
+
+.main-nav li {
+    float: right;
+}
+
+.main-nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 36px 20px;
+    text-decoration: none;
+}
+
+ul.main-nav li a:hover:not(.active) {
+    background-color: #73b0b55e;
+}
+
+.active {
+    background-color: #4ca3af;
+}
+
+.fab, .fa, .fas{
+    font-size: x-large;
+    place-self: center;
+
+}
+
+li a p{
+    padding: 0;
+    margin-top: 6%;
+}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Page not found' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}"/>
+{% endblock %}
+
+{% block page_head_title %}Personal Page - Private Area {% endblock %}
+{% block page_header_slider %}
+    <div class="login-wrap">
+        <div class="login-html">
+            <div class="username">
+                <h3>שלום {{ session.get('name') }}</h3>
+            </div>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">עדכון סיסמא</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">מחיקת משתמש</label>
+            <div class="login-form">
+                <form action="/privateArea" method="POST">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="pass" class="label">סיסמא נוכחית</label>
+                            <input id="pass" type="password" name="pass" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <label for="new-pass" class="label">סיסמא חדשה</label>
+                            <input id="pass" type="password" name="new-pass" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <label for="new-pass1" class="label">חזור שנית</label>
+                            <input id="pass" type="password" name="new-pass1" class="input" data-type="password" required>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value ="עדכן">
+                        </div>
+                        <div class="hr"></div>
+                        {% if massage %}
+                            <p class="massage"> {{ massage }}</p>
+                        {% endif %}
+                    </div>
+                </form>
+
+                <form action="/delete-user" method="POST">
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="delete-text" class="label">למחיקת המשתמש אנא הכנס את כתובת המייל שלך</label>
+                            <input id="delete-text" type="text" name="delete-text" class="input" required>
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="מחיקה">
+                        </div>
+                        <div class="hr"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block page_body_main %}{% endblock %}
+
+
+
+
+
+
+

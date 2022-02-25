@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Products' %}
+
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('products.static', filename='css/products.css') }}"/>
+{% endblock %}
+
+{% set page_title = 'מוצרי טיפוח' %}
+
+{% block page_body_main %}
+        <div class="products">
+            <div class="containerProducts">
+            {% if products %}
+                {% for product in products %}
+                <div class="box">
+                    <h2>0{{ product.id }}</h2>
+                    <h3>{{ product.name }}<br>{{ product.title }}</h3>
+                    <img src="{{ url_for('products.static', filename=product.image) }}">
+                    <p>{{ product.description }}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+{% endblock %}
+
+
+
+

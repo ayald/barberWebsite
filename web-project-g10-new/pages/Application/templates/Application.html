@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Application' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('Application.static', filename='css/Application.css') }}"/>
+{% endblock %}
+
+{% set page_title = 'קביעת תורים' %}
+
+{% block page_body_main %}
+    <div class="row_app">
+        <h3 class="appTitle">:להורדת האפליקציה לקביעת תורים</h3>
+        <div class="appLeft">
+            <a href="https://apps.apple.com/us/app/yarin-sason/id1508774210" target="_blank">
+                <img src={{ url_for('Application.static', filename='media/appStore.png') }} class="appStore">
+            </a>
+        </div>
+
+        <div class="appRight">
+            <a href="https://play.google.com/store/apps/details?id=com.easytor.yarinsason&hl=en_US&gl=US" target="_blank">
+                <img src={{ url_for('Application.static',filename='media/googlePlay.png') }} class="googlePlay">
+            </a>
+        </div>
+    </div>
+{% endblock %}
+

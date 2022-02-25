@@ -1,0 +1,31 @@
+/**
+ * ===================================================================
+ * Gallery
+ * -------------------------------------------------------------------
+ */
+ .gallerycontainer{
+    text-align: center;
+    margin: 20px auto;
+    padding: 0px;
+    display: flex;
+  }
+  .gallery{
+    margin: 10px 50px;
+  }
+
+  .gallery img{
+    height: 200px;
+    margin: 10px;
+    padding: 5px;
+    filter: grayscale(100%);
+    transition: 1s;
+  }
+  .gallery img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+  .gallery a:hover{
+    opacity: 0.5;
+  }
+
+

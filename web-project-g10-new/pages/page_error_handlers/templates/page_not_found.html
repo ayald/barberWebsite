@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Page not found' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('page_error_handlers.static', filename='css/page_error_handlers.css') }}"/>
+{% endblock %}
+
+{% block page_head_title %}
+    Page not found
+{% endblock %}
+
+{% block page_body_main %}
+     <div class="hero2">
+        <div class="row">
+          <div  class="error">
+              <h2>אופס!</h2>
+                <h3>הדף שביקשת אינו נמצא</h3>
+          </div>
+        </div>
+
+        <a href="{{ url_for('homepage.index') }}" class="button">חזרה לדף הבית
+            <i class="fa fa-arrow-left"></i>
+        </a>
+     </div>
+{% endblock %}
+
+

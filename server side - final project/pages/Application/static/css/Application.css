@@ -1,0 +1,41 @@
+.row_app{
+    height: 450px;
+}
+
+.appStore{
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+.googlePlay{
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.googlePlay:hover, .appStore:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+
+.appTitle{
+    width: 100%;
+    text-align: center;
+    padding: 3%;
+}
+
+.appLeft{
+    width: 50%;
+    display: flex;
+    float: left;
+    padding: 3%;
+}
+
+.appRight{
+    width: 50%;
+    display: flex;
+    float: right;
+    padding: 3%;
+    direction: ltr;
+}

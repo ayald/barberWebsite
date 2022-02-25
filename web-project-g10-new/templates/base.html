@@ -1,0 +1,139 @@
+{#
+Base page variables:
+-- page_head_title_author | default: 'Yarin Sason'
+
+#}
+
+{#
+Base page blocks:
+- head
+-- page_head
+--- page_head_title
+-- page_head_meta_extra
+-- page_head_css
+
+- body
+-- page_body_content
+--- page_body_header
+---- page_header_slider
+---- page_body_header_content
+----- page_body_header_content__main_menu
+------ page_body_header_content__main_menu_content
+------- page_body_header_content__main_menu_content_links
+--- page_body_main
+---- page_body_main_content
+--- page_body_footer
+-- page_body_js
+ #}
+<!DOCTYPE html>
+ <html lang="he">
+    <head>
+    {% block page_head %}
+        {# Title #}
+        <title>{{ page_head_title | default('Yarin Sason', true) }}</title>
+
+        {# Meta tags #}
+        <base href="/"/>
+        <meta charset="UTF-8"/>
+        {% block page_head_meta_extra %}{% endblock %}
+
+        {# favicon #}
+        <link rel="icon" href="{{ url_for('static', filename='media/img/favicon/flask-favicon.png') }}"/>
+
+        {# CSS #}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
+
+        {# Font Aswome #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        {% block page_head_css %}{% endblock %}
+
+        {# JS #}
+        <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+        {% block page_head_js %}{% endblock %}
+    {% endblock %}
+    </head>
+
+    <body>
+
+    {% block page_body_content %}
+        {# Header #}
+        {% block page_body_header %}
+            <header>
+                {% include 'main_menu.html' %}
+                {% block page_header_slider %}
+                        {% include 'header_slider.html' %}
+                {% endblock %}
+            </header>
+        {% endblock %}
+
+        {# Main Content #}
+        {% block page_body_main %}
+            {% block page_body_main_content %}
+            {% endblock %}
+            {% block page_body_main_service %}
+                <div class="home-services">
+                    <div class="container">
+                        <div class="services">
+                            <h2 class="title_services">השירותים שלנו</h2>
+                        </div>
+                        <div class="box">
+                            <h2>01</h2>
+                            <h3>עיצוב שיער</h3>
+                            <p>
+                                במספרת ירין ששון, עיצוב שיער או תספורת נשים הם אמנות.
+                                כזו שמאזנת באופן מיטבי בין הרצוי לאפשרי. כל תספורות הנשים ועיצובי השיער במספרה שלנו נעשים
+                                 במלאכת מחשבת שלמה, תוך קיום דיאלוג עם הלקוחה על מנת להבין את צרכיה ורצונותיה.
+                                 בקיצור, יחס אישי ומקצועי במלוא מובן המילה.
+                                 בתהליך בחירת התספורת יילקחו בחשבון תווי פנים, צבע עיניים
+                                 ומאפייני השיער (גוון, צבע, אורך, נפח וכדומה).
+                                 זאת בכדי להציג בפנייך מניפת אופציות אופטימליות.
+                                 כמו כן, בעיצוב תספורת נשים אנו מקפידים על תיאום ציפיות ואופן העיצוב המומלץ.
+                                 שביעות רצון הלקוחה הוא בראש סדר העדיפויות שלנו.
+                            </p>
+                        </div>
+                        <div class="box">
+                            <h2>02</h2>
+                            <h3>כלות</h3>
+                            <p>
+                                ירין מומחה בעיצוב שיער לכלות. המספרה נמצאת בבאר שבע ומאפשרת גישה קלה בסביבה שקטה במיוחד בעיר.
+                                כל כלה עוברת תהליך לבחירת התסרוקת המתאימה, לא כל תסרוקת של כלה חייבת להיות גרנדיוזית.
+                                אך עם זאת ירין רואה עצמו כמגשים חלומות לכלות ביום חתונתם ולכן נקבעת פגישת ייעוץ מסודרת (לפעמים צריך גם יותר מכך)
+                                ובה עוברים על תסרוקות לדוגמא מתוך קטלוג של עשרות ומאות תסרוקות.
+                                לאחר מכן יושבים יחד ומבינים מה הכלה אוהבת או שנשמח לתת את דעתנו ולהגיד לה מה נראה הכי מתאים לה מניסיון אישי.
+                            </p>
+                        </div>
+                        <div class="box">
+                            <h2>03</h2>
+                            <h3>החלקות</h3>
+                            <p>
+                                חולמת על שיער חלק כמשי? רוצה להחליק אבל לא עד הסוף?
+                                מחפשת את ההחלקה שתתאים לך ולפנייך? הגעת למקום הנכון.
+                                מספרת ירין ששון היא מספרה המתמחה בשתי החלקות שיער – החלקה יפנית והחלקת קרטין.
+
+                                החלקת שיער במספרה שלנו נעשית בדיוק לטעמך ולסגנון שאת מחפשת.
+                                הכל תוך קבלת ייעוץ מקצועי מצד ירין שידע להעניק לך יחס אישי
+                                ולא פחות חשוב מכך – להכווין אותך בעולם שבו החלקות שיער מאפשרות
+                                מניפה רחבה של אפשרויות והזדמנויות לחדש ולרענן.
+                                גם אם את בטוחה לגבי מה שאת רוצה, וגם אם את עדיין מתלבטת ומחפשת השראה, אנו כאן בשבילך.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+            {% block page_body_main_more %}
+            {% endblock %}
+        {% endblock %}
+
+        {# Footer #}
+        {% block page_body_footer %}
+            <footer>
+                {% include 'footer.html' %}
+            </footer>
+        {% endblock %}
+
+    {% endblock %}
+
+        {# JS Body #}
+        {% block page_body_js %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'gallery' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('gallery.static', filename='css/gallery.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('gallery.static', filename='css/lightbox.min.css') }}"/>
+{% endblock %}
+{% block page_head_js %}
+      <script src="{{ url_for('gallery.static', filename='js/lightbox-plus-jquery.min.js') }}"></script>
+{% endblock %}
+
+{% set page_title = 'גלריה' %}
+
+{% block page_body_main %}
+    <div class="gallerycontainer">
+        <div class="gallery">
+
+            <a href="{{ url_for('gallery.static', filename='{{ pic }}') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img1small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img2.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img2small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img3.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img3small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img4.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img4small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img5.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img5small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img6.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img6small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img7.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img7small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img8.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img8small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img9.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img9small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img10.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img10small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img11.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img11small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img12.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img12small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img13.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img13small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img14.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img14small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img15.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img15small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img16.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img16small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img17.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img17small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img18.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img18small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img19.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img19small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img20.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img20small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img21.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img21small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img22.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img22small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img23.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img23small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img24.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img24small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img25.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img25small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img26.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img26small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img27.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img27small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img28.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img28small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img29.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img29small.jpg') }}"></a>
+            <a href="{{ url_for('gallery.static', filename='media/img30.jpg') }}" data-lightbox="mygallery"><img src= "{{ url_for('gallery.static', filename='media/img30small.jpg') }}"></a>
+        </div>
+    </div>
+{% endblock %}

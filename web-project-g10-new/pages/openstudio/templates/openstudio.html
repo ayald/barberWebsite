@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Open Studio' %}
+
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('openstudio.static', filename='css/openstudio.css') }}"/>
+{% endblock %}
+
+{% block page_head_js %}
+ <script src="{{ url_for('openstudio.static', filename='js/openstudio_js.js') }}"></script>
+{% endblock %}
+
+{% set page_title = 'השתלמויות' %}
+
+{% block page_body_main %}
+  <div class="OpenStudio_wrap">
+        <div class="content-right">
+        <section>
+            <article>
+                <h2> ירין ששון מזמין אותך ליום השתלמות בנושא עיצוב השיער כלות </h2>
+                <h3>בהשתלמות תרכשו כלים וידע רב שיאפשרו לכם להתמקצע בתחום עיצוב השיער</h3>
+
+                <h4>מה מקבלים בהשתלמות?</h4>
+                <p>- שיחת היכרות + כיבוד קל<br>
+                   - הדגמה על מודליסטית: 4 לוקים שונים של שיער <br>
+                   - הסבר על חומרי גלם ותוספות שיער<br>
+                   - טיפים ליצירת מראה שיער טבעי ורך </p>
+
+                <h4 >עלות השתתפות</h4>
+                <p>-500 ש״ח למשתתף</p>
+
+                <p>* ההשתלמות מיועדת לבעלי רקע בתחום עיצוב השיער<br>
+                   * ההשתלמות הינה בקבוצות קטנות - מס׳ מקומות מוגבל</p>
+            </article>
+        </section>
+        </div>
+        <div class="content-left">
+            <iframe src="https://player.vimeo.com/video/390273977" width="600" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <p><a href="https://vimeo.com/390273977">Yarin Sason Open Studio</a> from <a href="https://vimeo.com/liormalkavideofilms">Lior Malka|Video Films</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+        </div>
+  </div>
+
+    <!--The end of content-->
+
+    <div class="wrap_imgs">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img1.png') }}">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img2.png') }}">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img4.png') }}">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img3.png') }}">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img6.png') }}">
+        <img class="imgs" onmouseover= bigImg(this) onmouseout= normalImg(this) src="{{ url_for('openstudio.static', filename='Images/img5.jpg') }}">
+    </div>
+
+    <!--The end of imgs-->
+
+    <div class="op_wrap" >
+        <div class="op_grid">
+            <h2>טופס בקשה להרשמה</h2>
+            <p>יש למלא את כל הפרטים הנדרשים ונחזור אלייך בהקדם</p>
+            <form id="register" name="register-form" action="/todo" method="GET">
+                <input class="op_reg" type="text" id="fullname"name="fullname" placeholder="שם מלא" required="">
+                <input class="op_reg" type="text" id="tel" name="phone" placeholder="טלפון" required="">
+                <input class="op_reg" type="email" id="email" name="email" placeholder="כתובת אימייל">
+                <input id="reg" type="submit" value="הגש התעניינות">
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

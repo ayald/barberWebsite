@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Homepage' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('homepage.static', filename='css/homepage.css') }}"/>
+{% endblock %}
+
+{% block page_head_js %}
+    <script src="{{ url_for('homepage.static', filename='js/homepage.js') }}"></script>
+{% endblock %}
+
+{% block page_header_slider %}
+   <div class="slider">
+        <div class="load"></div>
+        <div class="content">
+            <div class="print-text">
+                <h1>ירין ששון עיצוב שיער</h1>
+                <p></p>
+            </div>
+        </div>
+   </div>
+   {% if success %}
+       <script>
+           alert("המשתמש נרשם בהצלחה");
+       </script>
+   {% endif %}
+{% endblock %}
+
+{% block page_body_main_content %}
+    <div class="home-about">
+        <div class="right">
+            <div>
+                 <img src="{{ url_for('homepage.static', filename='media/home-slider.jpg') }}" alt="slider" id="about_pic">
+            </div>
+        </div>
+        <div class="left">
+            <h2 class="title_about">אודות</h2>
+            <p> מספרת ירין ששון ממוקמת בעיר באר שבע ומשלבת יצירתיות, סגנון, חדשנות, סטייל ואמנות.
+                המספרה משרתת נאמנה אין ספור לקוחות המגיעים גם מהסביבה וגם ממרחק.
+                עם ירין, בעל ניסיון של שנים רבות בתחום, אתם יכולים להיות בטוחים שהשיער שלכם יקבל את היחס הטוב ביותר.
+                הכל בהתאמה אישית, ללא פשרות ועם החומרים הטובים ביותר!
+                 </p>
+            <a href="{{ url_for('about.index') }}" class="button">קרא עוד
+                <i class="fa fa-arrow-left"></i>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+{% block page_body_main_more %}
+    <div class="home-gallery">
+        <!-- Photo grid -->
+        <div class="photo-row">
+            <div class="photo-col">
+                <img src="{{ url_for('static', filename='media/img/img10small.jpg') }}" style="width:100%" onclick="onClick(this)" alt="תסרוקות">
+            </div>
+
+            <div class="photo-col">
+                <img src="{{ url_for('static', filename='media/img/img11small.jpg') }}" style="width:100%" onclick="onClick(this)" alt="עיצוב פזור">
+            </div>
+
+            <div class="photo-col">
+                <img src="{{ url_for('static', filename='media/img/img16small.jpg') }}" style="width:100%" onclick="onClick(this)" alt="תסרוקת ערב">
+            </div>
+            <div class="photo-col">
+                <img src="{{ url_for('static', filename='media/img/img19small.jpg') }}" style="width:100%" onclick="onClick(this)" alt="תסרוקת אסוף">
+            </div>
+        </div>
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+            <div class="full-image animate-zoom">
+            <img id="img01" class="w3-image">
+            <p id="caption"></p>
+            </div>
+        </div>
+    </div>
+    <div class="row-more">
+        <div class="instagram">
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div class="elfsight-app-34474d42-d2a0-48b1-b75c-6b01c685365c"></div>
+        </div>
+        <div class="quotes-container">
+            {% if recommends %}
+                {% for recommend in recommends %}
+                    <div class="quoteSlides">
+                    <q>{{ recommend.details }}</q>
+                    <p class="author">- {{ recommend.name }}  -</p>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block page_body_js %}
+     <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+     </script>
+{% endblock %}

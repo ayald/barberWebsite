@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Products' %}
+
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('products.static', filename='css/products.css') }}"/>
+{% endblock %}
+
+{% set page_title = 'מוצרי טיפוח' %}
+
+{% block page_body_main %}
+        <div class="products">
+            <div class="containerProducts">
+
+                <div class="box">
+                    <h2>01</h2>
+                    <h3>Hair Spa Rejuvenation<br> שמפו ספא</h3>
+                    <img src="{{ url_for('products.static', filename='Images/product1.png') }}">
+                    <p>שמפו המסייע בחיזוק אורכי השיער ובהפחתת שבירת השיער. מותיר את שיערך בעל מגע חזק וגמיש!</p>
+                </div>
+
+                <div class="box">
+                    <h2>02</h2>
+                    <h3>Rich Nutrition Enriching<br> שמן לשיער</h3>
+                    <img src="{{ url_for('products.static', filename='Images/product2.png') }}">
+                    <p>משחזר את מבנה השיער בצורה ממוקדת, מספק הגנה לטווח ארוך מפני נזקים חדשים וחום</p>
+                </div>
+
+                <div class="box">
+                    <h2>03</h2>
+                    <h3>Palmolive Naturals Healthy<br> שמפו ומרכך</h3>
+                    <img src="{{ url_for('products.static', filename='Images/product4.png') }}">
+                    <p>הפורמולה המזינה של שמפו ומרכך עם תמציות וויטמין אלוורה, למראה שיער רענן ללא מאמץ לאורך כל היום.</p>
+                </div>
+
+                <div class="box">
+                    <h2>04</h2>
+                    <h3>hair acid<br> balance<br> מסכה לשיער</h3>
+                    <img src="{{ url_for('products.static', filename='Images/product3.png') }}">
+                    <p>מומלצת לטיפול מקצועי בשיער לאחר צביעה. השילוב הייחודי של תמציות ענבים ופירות הדר מספק טיפול מעולה והגנה על עוצמת הצבע.</p>
+                </div>
+
+                <div class="box">
+                    <h2>05</h2>
+                    <h3>Pantene 3 Minute Miracle<br> מרכך הקסם</h3>
+                    <img src="{{ url_for('products.static', filename='Images/product5.png') }}">
+                    <p>מאפשר לך לשמור על השיער הצבוע שלך ולהחזיר לו את גוונו. זהו מרכך שחזק כמו מסיכה לשיער, והוא יכול ב180 שניות לעשות שיקום של נזק שהצטבר לאורך 90 יום.</p>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+
+
+
